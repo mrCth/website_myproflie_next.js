@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  
+} 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+    background-color:  #000000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: ;
+    
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.container {
+  color: #F7E7DC;
+}
+
+.container .navber .menu a {
+  font-family: "Prompt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: #F7E7DC; /* Adjust color as needed */
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F7E7DC; /* Adjust underline color as needed */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.info :hover {
+  animation: rainbow-text 1s infinite;
+}
+
+@keyframes rainbow-text {
+  0%, 100% {
+    color: red;
+  }
+  16.66% {
+    color: orange;
+  }
+  33.33% {
+    color: yellow;
+  }
+  50% {
+    color: green;
+  }
+  66.66% {
+    color: blue;
+  }
+  83.33% {
+    color: indigo;
+  }
+}
+
+.Template .hover-underline-animation {
+    position: relative;
+    color: #F7E7DC;
+}
+
+.Template .hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 290px;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F7E7DC; /* Adjust underline color as needed */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.Template .hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* globals.css */
+
+.container {
+  position: relative;
+  z-index: 0;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+}
+
+.project-card:hover ~ .container::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  z-index: 1;
+}
+
+.project-card {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
