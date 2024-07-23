@@ -6,19 +6,17 @@ import Link from "next/link"; // Import Link from next/link
 import CursorAnimation from './CursorAnimation'; // Adjust the path if necessary
 
 export default function Home() {
-  useEffect(() => {
-    // Disable right-click context menu
-    const disableContextMenu = (e) => {
-      e.preventDefault();
-    };
+  // useEffect(() => {
+  //   // Disable right-click context menu
+    
 
-    document.addEventListener('contextmenu', disableContextMenu);
+  
 
-    // Clean up the event listener on component unmount
-    return () => {
-      document.removeEventListener('contextmenu', disableContextMenu);
-    };
-  }, []);
+  //   // Clean up the event listener on component unmount
+  //   return () => {
+  //     document.removeEventListener('contextmenu', disableContextMenu);
+  //   };
+  // }, []);
 
   return (
     <div className="relative">
